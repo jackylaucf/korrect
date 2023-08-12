@@ -1,0 +1,10 @@
+/test
+*.pyc
+**/__pycache__/
+update_space.yml
+/korrect.egg-info
+*.log*
+.idea
+app.py
+__pycache__
+build

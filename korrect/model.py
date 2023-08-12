@@ -1,0 +1,22 @@
+import openai
+
+
+class KorrectModel:
+    def __init__(self, model_type: str, model_name: str):
+        self.model_type = model_type
+        self.model_name = model_name
+
+        if self.model_type == 'openai':
+            self.model = openai.ChatCompletion
+        else:
+            raise ValueError("Unsupported model type. We only support openai models for now.")
+
+    def prompt(self, messages: list):
+        if self.model_type == 'openai':
+            response = self.model.create(model=self.model_name, messages=messages)
+            return response['choices'][0]['message']['content']
+        else:
+            raise ValueError("Unsupported model type. We only support openai models for now.")
+
+# openai_instance = KorrectModel('openai', 'gpt-3.5-turbo')
+# print(openai_instance.prompt("Who won the Nobel Peace Prize in 2020?"))
