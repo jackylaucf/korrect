@@ -1,13 +1,24 @@
 from korrect.model import KorrectModel
 from korrect.methods.extractor import KorrectExtractor
+from korrect.ui import KorrectUI
 import json, os
+from subprocess import Popen
+
+BASE_PATH = os.path.dirname(os.path.abspath(__file__))
 
 class Korrect(KorrectModel):
     def __init__(self, model_type, model_name):
         super().__init__(model_type, model_name)
+        self.ui = self._launch_ui()
+    
+    def _launch_ui(self):
+        return Popen(["python3", "-m", "streamlit", "run", os.path.join(BASE_PATH, "ui.py")])
+    
+    def close(self):
+        self.ui.kill()
 
     def fact_checking(self, prompt):
-        extractor = KorrectExtractor(prompt_template_location=os.path.join(os.path.dirname(os.path.abspath(__file__)), "methods/prompts"))
+        extractor = KorrectExtractor(prompt_template_location=os.path.join(BASE_PATH, "methods/prompts"))
 
         resp_prompt = self.prompt([{"role": "user", "content": prompt}])
 
