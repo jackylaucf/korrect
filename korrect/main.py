@@ -1,13 +1,13 @@
 from korrect.model import KorrectModel
 from korrect.methods.extractor import KorrectExtractor
-import json
+import json, os
 
 class Korrect(KorrectModel):
     def __init__(self, model_type, model_name):
         super().__init__(model_type, model_name)
 
     def fact_checking(self, prompt):
-        extractor = KorrectExtractor(prompt_template_location="./methods/prompts")
+        extractor = KorrectExtractor(prompt_template_location=os.path.join(os.path.dirname(os.path.abspath(__file__)), "methods/prompts"))
 
         resp_prompt = self.prompt([{"role": "user", "content": prompt}])
 

@@ -8,3 +8,4 @@ update_space.yml
 app.py
 __pycache__
 build
+/myenv
