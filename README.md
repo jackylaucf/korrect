@@ -11,3 +11,5 @@ k.fact_checking("How many sons had teddy roosevelt in total?")
 right now, korrect only supports openai models.
 
 please don't forget to export your OPENAI_API and SERPER tokens as env vars!
+
+Join our discord community [here](https://discord.gg/stGaVVhq)
