@@ -1,5 +1,9 @@
 ## Korrect
 
+Korrect is a light-weight testing and fact-checking framework for LLMs.
+
+To get started:
+
 ```python
 from korrect import Korrect
 
