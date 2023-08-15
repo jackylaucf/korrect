@@ -3,10 +3,12 @@
 ```python
 from korrect import Korrect
 
-k = Korrect("openai", "gpt-3.5-turbo")
-k.fact_checking("How many sons had teddy roosevelt in total?")
-
+k = Korrect()
 ```
+
+then navigate to `http://localhost:8501/` and you'll find the UI:
+
+<!-- ![demo asset](korrect/assets/demo.jpeg) -->
 
 right now, korrect only supports openai models.
 
@@ -27,11 +29,11 @@ pip3 install -e .
 ### Roadmap
 
 - [ ] fix import error ModuleNotFound
-- [x] fix yaml file directory error
 - [ ] add Huggingface model support
 - [ ] fix async await calls
 - [ ] dockerize
 - [ ] env config
+- [x] fix yaml file directory error
 
 ### Contributions
 

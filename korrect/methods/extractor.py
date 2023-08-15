@@ -6,17 +6,18 @@ import json
 from korrect.methods.tool import google_search
 
 class KorrectExtractor:
-    def __init__(self, prompt_template_location):
+    def __init__(self, prompt, prompt_template_location, model_type):
         self.prompt_template_location = prompt_template_location
-        self.model = KorrectModel('openai', 'gpt-3.5-turbo')
+        self.model = KorrectModel(model_type, 'gpt-3.5-turbo')
+        self.response = self.model.prompt([{"role": "user", "content": prompt}])
 
-    def extract_claim(self, response):
+    def extract_claim(self):
         with open(os.path.join(self.prompt_template_location, "extraction.yaml")) as f:
             self.claim_prompts = yaml.load(f, Loader=yaml.FullLoader)
             claim_prompt = self.claim_prompts['knowledge_qa']
             templated = [
                     {"role": "system", "content": claim_prompt['system']},
-                    {"role": "user", "content": claim_prompt['user'].format(input=response)},
+                    {"role": "user", "content": claim_prompt['user'].format(input=self.response)},
                 ]
             self.claims = json.loads(self.model.prompt(messages=templated))
     
