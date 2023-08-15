@@ -1,5 +1,6 @@
 ## Korrect
 
+<img alt="GitHub commit activity (branch)" src="https://img.shields.io/github/commit-activity/t/kortex-labs/korrect">
 <a href="https://cla-assistant.io/kortex-labs/korrect"><img src="https://cla-assistant.io/readme/badge/kortex-labs/korrect" alt="CLA assistant" /></a>
 
 Korrect is a light-weight testing and fact-checking framework for LLMs.
