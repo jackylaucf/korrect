@@ -32,7 +32,7 @@ pip3 install -e .
 - [ ] add Huggingface model support
 - [ ] fix async await calls
 - [ ] dockerize
-- [ ] env config
+- [x] env config
 - [x] fix yaml file directory error
 
 ### Contributions
