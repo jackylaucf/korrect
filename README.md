@@ -8,7 +8,7 @@ k = Korrect()
 
 then navigate to `http://localhost:8501/` and you'll find the UI:
 
-![demo asset](./asset/demo.jpeg)
+![demo asset](https://github.com/kortex-labs/korrect/blob/6448ec72b44695cee6a284a7c7b6647debaeaa9c/korrect/asset/demo.jpeg)
 
 right now, korrect only supports openai models.
 
@@ -35,4 +35,4 @@ pip3 install -e .
 
 To contribute, please see our [contribution guide.](./CONTRIBUTING.md)
 
-Join our discord community [here](https://discord.gg/stGaVVhq) ![discord](./asset/discord.png)
+Join our discord community [here](https://discord.gg/stGaVVhq) ![discord](https://github.com/kortex-labs/korrect/blob/6448ec72b44695cee6a284a7c7b6647debaeaa9c/korrect/asset/discord.png)
