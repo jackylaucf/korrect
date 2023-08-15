@@ -8,7 +8,7 @@ k = Korrect()
 
 then navigate to `http://localhost:8501/` and you'll find the UI:
 
-<!-- ![demo asset](korrect/assets/demo.jpeg) -->
+![demo asset](https://github.com/kortex-labs/korrect/blob/6ea8d61da826f4beb23c617b1219331782f34998/korrect/asset/demo.jpeg)
 
 right now, korrect only supports openai models.
 
