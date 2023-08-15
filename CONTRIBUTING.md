@@ -53,9 +53,7 @@ We actively welcome your pull requests.
 
 ## Contributor License Agreement ("CLA")
 
-In order to accept your pull request, we need you to sign a CLA. You only need to do this once to work on our project.
-
-We are currently working on creating a CLA, we'll let you know when it's ready!
+In order to accept your pull request, we need you to sign our [CLA](https://cla-assistant.io/kortex-labs/korrect). You only need to do this once to work on our project.
 
 ## License
 
