@@ -35,6 +35,4 @@ pip3 install -e .
 
 To contribute, please see our [contribution guide.](./CONTRIBUTING.md)
 
-Join our discord community [here](https://discord.gg/stGaVVhq)
-
-<img src="https://github.com/kortex-labs/korrect/blob/6448ec72b44695cee6a284a7c7b6647debaeaa9c/korrect/asset/discord.png" alt="drawing" width="20" height="20"/>
+Join our discord community [here](https://discord.gg/stGaVVhq) <img src="https://github.com/kortex-labs/korrect/blob/6448ec72b44695cee6a284a7c7b6647debaeaa9c/korrect/asset/discord.png" alt="drawing" width="35" height="20"/>
