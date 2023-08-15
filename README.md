@@ -32,3 +32,7 @@ pip3 install -e .
 - [ ] fix async await calls
 - [ ] dockerize
 - [ ] env config
+
+### Contributions
+
+To contribute, please see our [contribution guide.](./CONTRIBUTING.md)
