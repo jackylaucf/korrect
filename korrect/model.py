@@ -17,6 +17,3 @@ class KorrectModel:
             return response['choices'][0]['message']['content']
         else:
             raise ValueError("Unsupported model type. We only support openai models for now.")
-
-# openai_instance = KorrectModel('openai', 'gpt-3.5-turbo')
-# print(openai_instance.prompt("Who won the Nobel Peace Prize in 2020?"))
