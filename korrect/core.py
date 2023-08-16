@@ -1,7 +1,7 @@
 from korrect.model import KorrectModel
-from korrect.methods.extractor import KorrectExtractor
 import json, os
 from subprocess import Popen
+from korrect.experiment import KorrectExperiment
 
 BASE_PATH = os.path.dirname(os.path.abspath(__file__))
 
@@ -15,6 +15,10 @@ class Korrect():
     def close(self):
         self.ui.kill()
 
-
-#     k.fact_checking("How many sons had teddy roosevelt in total?")
+    def create_experiment(self, parameters: dict = {}):
+        # {
+        #     {"model_type": "OpenAI Chat", "model": "gpt-3.5-turbo"},
+        #     {"model_type": "OpenAI Chat", "model": "gpt-4"}
+        # }
+        self.experiment = KorrectExperiment(parameters)
 

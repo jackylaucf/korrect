@@ -3,7 +3,7 @@ from urllib.parse import quote, unquote
 import pyperclip
 from korrect.backend import fact_checking
 import os
-from korrect.main import BASE_PATH
+from korrect.core import BASE_PATH
 import json
 
 class KorrectUI():
