@@ -6,8 +6,22 @@ from korrect.experiment import KorrectExperiment
 BASE_PATH = os.path.dirname(os.path.abspath(__file__))
 
 class Korrect():
-    def __init__(self):
-        self.ui = self._launch_ui()
+    def __init__(self, ui=True, credentials: dict = {}):
+        if ui:
+            self.ui = self._launch_ui()
+        else:
+            # {
+            #     "OPENAI_API_KEY": "****",
+            #     "SERPER_API_KEY": "****"
+            # }
+            if len(credentials) == 0:
+                raise Exception("credentials should not be empty with no-ui mode")
+            self.credentials = credentials
+            self._set_env_vars()
+    
+    def _set_env_vars(self):
+        for name, credentials in self.credentials.items():
+            os.environ[name] = credentials
     
     def _launch_ui(self):
         return Popen(["python3", "-m", "streamlit", "run", os.path.join(BASE_PATH, "ui.py")])
@@ -15,10 +29,6 @@ class Korrect():
     def close(self):
         self.ui.kill()
 
-    def create_experiment(self, parameters: dict = {}):
-        # {
-        #     {"model_type": "OpenAI Chat", "model": "gpt-3.5-turbo"},
-        #     {"model_type": "OpenAI Chat", "model": "gpt-4"}
-        # }
+    def create_experiment(self, parameters: dict):
         self.experiment = KorrectExperiment(parameters)
-
+        return self.experiment
