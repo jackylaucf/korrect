@@ -18,6 +18,30 @@ then navigate to `http://localhost:8501/` and you'll find the UI:
 
 right now, korrect only supports openai models.
 
+Korrect also supports experiments in no-ui mode:
+
+```python
+credentials = {
+    "OPENAI_API_KEY": "*",
+    "SERPER_API_KEY": "*"
+}
+
+client = Korrect(ui=False, credentials=credentials)
+
+parameters = {
+    "prompt": "who won the Nobel Peace Prize in 2020?",
+    "models": [
+    {"model_type": "OpenAI Chat",
+    "model_name": "gpt-3.5-turbo"},
+    {"model_type": "OpenAI Chat",
+    "model_name": "gpt-4"}
+]}
+
+experiment = client.create_experiment(parameters=parameters)
+
+results = experiment.run()
+```
+
 ### Development 
 
 For development, please run:
