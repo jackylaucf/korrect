@@ -1,0 +1,29 @@
+/* styles.css */
+body {
+    background-color: white;
+    color: #002366; /* Dark blue color */
+}
+
+header, footer {
+    background-color: #007BFF; /* Blue color */
+    color: white;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.sidebar {
+    background-color: #007BFF; /* Blue color */
+    color: white;
+    padding: 1rem;
+}
+
+.btn-primary {
+    background-color: #007BFF; /* Blue color */
+    color: white;
+    border-color: #007BFF; /* Blue color */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Darker blue color on hover */
+    border-color: #0056b3; /* Darker blue color on hover */
+}

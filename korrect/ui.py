@@ -29,14 +29,10 @@ class KorrectUI():
         self.var_names = []
 
     def run(self):
-        # with open("style.css") as f:
+        # with open(os.path.join(BASE_PATH, "style.css")) as f:
         #     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
-        st.set_page_config(
-            page_title="Korrect",
-            layout="wide",  # You can adjust the layout as needed
-            page_icon="📚"
-        )
-        st.header("Korrect")
+
+        st.header("Korrect QA")
 
         self.mode = st.sidebar.radio("Choose a mode", self.MODES)
         self.handle_mode()
@@ -77,7 +73,7 @@ class KorrectUI():
 
     def handle_fact_checking_mode_ui(self):
         self._set_env_vars()
-        prompt_to_check = st.text_input("Enter a prompt:", key="prompt_to_check")
+        prompt_to_check = st.text_area("Enter a prompt:", key="prompt_to_check")
         submit_button = st.button("Submit")
 
         if submit_button and prompt_to_check:
@@ -86,10 +82,30 @@ class KorrectUI():
                 st.warning("Please set the OPENAI_API_KEY first.")
             else:
                 _, response, claims, validation = fact_checking(BASE_PATH, prompt_to_check, self.model_type)
-                st.markdown(f"Given Prompt: {prompt_to_check}")
-                st.markdown(f"Response: {response}")
-                st.json(json.dumps(claims))
-                st.json(json.dumps(validation))
+                st.subheader("Response:")
+                st.markdown(response)
+
+                # CSS to inject contained in a string
+                hide_table_row_index = """
+                            <style>
+                            thead tr th:first-child {display:none}
+                            tbody th {display:none}
+                            </style>
+                            """
+
+                # Inject CSS with Markdown
+                st.markdown(hide_table_row_index, unsafe_allow_html=True)
+
+                # Display Claims as a table
+                st.subheader("Claims:")
+                claims_table = [claim for claim in claims]
+                st.table(claims_table)
+
+                # Display Validation as a table
+                st.subheader("Validation:")
+                validation_table = validation  # assuming validation is a list of dictionaries
+                st.table(validation_table)
+
 
 
     def share_button_logic(self, link):
