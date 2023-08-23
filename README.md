@@ -9,7 +9,7 @@ To get started:
 ```python
 from korrect import Korrect
 
-k = Korrect()
+k = Korrect(ui=True)
 ```
 
 then navigate to `http://localhost:8501/` and you'll find the UI:
@@ -18,7 +18,7 @@ then navigate to `http://localhost:8501/` and you'll find the UI:
 
 right now, korrect only supports openai models.
 
-Korrect also supports experiments in no-ui mode:
+Korrect also supports experiments in code-only mode:
 
 ```python
 credentials = {
