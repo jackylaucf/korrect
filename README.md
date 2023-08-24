@@ -2,7 +2,7 @@
 
 <img alt="GitHub commit activity (branch)" src="https://img.shields.io/github/commit-activity/t/kortex-labs/korrect"> <a href="https://cla-assistant.io/kortex-labs/korrect"><img src="https://cla-assistant.io/readme/badge/kortex-labs/korrect" alt="CLA assistant" /></a>
 
-Korrect is a light-weight performance testing framework for LLMs.
+Korrect is a light-weight hallucination testing framework for LLMs.
 
 To get started:
 
@@ -54,12 +54,12 @@ pip3 install -e .
 
 ### Roadmap
 
-- [ ] fix import error ModuleNotFound
 - [ ] add Huggingface model support
 - [ ] fix async await calls
 - [ ] dockerize
 - [x] env config
 - [x] fix yaml file directory error
+- [x] fix import error ModuleNotFound
 
 ### Contributions
 
