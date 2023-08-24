@@ -1,6 +1,6 @@
-from korrect.model import KorrectModel
-import json, os
-from subprocess import Popen
+import os
+from subprocess import PIPE, Popen
+
 from korrect.experiment import KorrectExperiment
 
 BASE_PATH = os.path.dirname(os.path.abspath(__file__))
@@ -24,8 +24,9 @@ class Korrect():
             os.environ[name] = credentials
     
     def _launch_ui(self):
-        return Popen(["python3", "-m", "streamlit", "run", os.path.join(BASE_PATH, "ui.py")])
-    
+        python_cmd = 'python' if os.name == 'nt' else 'python3'
+        Popen([python_cmd, "-m", "streamlit", "run", os.path.join(BASE_PATH, "ui.py")])
+
     def close(self):
         self.ui.kill()
 
